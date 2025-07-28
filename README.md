@@ -1,143 +1,140 @@
-# Bonus Projemin Dokümantasyonu! 🚀
+# Do You Want Your Shopier Customers to Read Your E-Book on Your Website? 🚀
 
-![Img](https://i.hizliresim.com/dm4cqa9.png)
-Bu dokümantasyon, Flask kullanarak oluşturduğum bir web uygulamasının nasıl çalıştırılacağı ve projenizin temel işlevleri hakkında bilgi içermektedir. Kendi deneyimimden yola çıkarak size adım adım rehberlik edeceğim. Ayrıca, projenin canlı çalışan versiyonunu [stayhard.com.tr](http://stayhard.com.tr) adresinde görebilirsiniz.
+This documentation provides information on how to run a web application built using Flask and covers the core functionalities of your project. I will guide you step-by-step based on my own experience. You can also see the live version of the project at [stayhard.com.tr](http://stayhard.com.tr).
 
-## 🎯 Proje Amacı
+## 🎯 Project Goal
 
-Bu proje, kullanıcıların çevrimiçi kitapları satın almasını veya okumasını sağlayan basit bir web uygulamasını hedeflemektedir. Kullanıcılar, bir e-posta adresi aracılığıyla giriş yapar, kitapları görüntüler ve satın alır veya okur. Projeyi nasıl çalıştırabileceğinizi ve özelleştirebileceğinizi aşağıda adım adım açıklayacağım. Projedeki temel özellikler ise şunlardır:
+This project aims to create a simple web application that allows users to purchase or read online books. Users log in via an email address, view books, and then buy or read them. Below, I will explain step-by-step how to run and customize the project. The core features of the project include:
 
-- Kullanıcı Girişi
-- E-posta Doğrulama
-- Kitapları Görüntüleme
-- Kitap Satın Alma veya Okuma
-- Tema ve Stil Seçenekleri
+  - User Login
+  - Email Verification
+  - Book Viewing
+  - Book Purchase or Reading
+  - Theme and Style Options
 
-## 🚀 Nasıl Çalıştırılır?
+## 🚀 How to Run?
 
-Projenizi çalıştırmak ve internet üzerinde yayınlamak için aşağıdaki adımları izleyebilirsiniz:
+You can run and publish your project online by following these steps:
 
-### Adım 1️⃣: Amazon EC2 Üzerinde Sanal Makine Oluşturma
+### Step 1️⃣: Create a Virtual Machine on Amazon EC2
 
-Amazon Web Services (AWS) üzerinde bir Windows sanal makine (Instance) oluşturun. Bu sanal makine, projenizi barındırmak için kullanılacaktır.
+Create a Windows virtual machine (Instance) on Amazon Web Services (AWS). This virtual machine will be used to host your project.
 
-### Adım 2️⃣: Sanal Makineye Bağlanma
+### Step 2️⃣: Connect to the Virtual Machine
 
-Sanal makineye erişmek için RDP (Remote Desktop Protocol) istemcisi kullanın. Ayrıca, .PEM dosyasındaki şifreyi çözerek erişiminizi sağlayın.
+Use an RDP (Remote Desktop Protocol) client to access the virtual machine. Also, decrypt the password in the .PEM file to gain access.
 
-### Adım 3️⃣: Proje Dosyalarını Yükleme
+### Step 3️⃣: Upload Project Files
 
-Projeyi yerel bilgisayarınızdan sanal makinenize kopyalayın. Bu adım, projenizin kaynak kodlarını içeren dosyaların sanal makinenize taşınmasını sağlar.
+Copy the project from your local computer to your virtual machine. This step ensures that the files containing your project's source code are transferred to your virtual machine.
 
-### Adım 4️⃣: Python Kurulumu
+### Step 4️⃣: Python Installation
 
-Sanal makinenizde Python'un en son sürümünü kurun. Bu adım, Flask uygulamanızın çalışması için gereklidir.
+Install the latest version of Python on your virtual machine. This step is necessary for your Flask application to run.
 
-### Adım 5️⃣: Proje Dizinine Gitme
+### Step 5️⃣: Navigate to the Project Directory
 
-Sanal makinenizde komut istemcisini açın ve projenizin bulunduğu dizine gidin. Örneğin:
+Open the command prompt on your virtual machine and navigate to your project directory. For example:
 
 ```
-cd ProjeYolu
+cd ProjectPath
 ```
 
-### Adım 6️⃣: Uygulamayı Çalıştırma
+### Step 6️⃣: Run the Application
 
-Flask uygulamanızı başlatmak için aşağıdaki komutu kullanın:
+Use the following command to start your Flask application:
 
 ```
 python main.py
 ```
 
-Bu komut, projenizi yerel sunucunuzda çalıştıracak ve belirli bir IP adresi ve bağlantı noktası üzerinden erişilebilir hale getirecektir.
+This command will run your project on your local server, making it accessible via a specific IP address and port.
 
-### Adım 7️⃣: Hosting Hizmeti Sağlama
+### Step 7️⃣: Provide Hosting Service
 
-Sanal makinenizde çalışan Flask uygulamanızı internete açmak için sanal makinenizin IP adresini kullanın. Bu, projenizin geçici bir URL'si olacaktır. Örneğin, `http://51.20.1.29/` gibi bir IP adresi olabilir.
+To expose your Flask application running on the virtual machine to the internet, use the IP address of your virtual machine. This will be a temporary URL for your project. For example, it might be an IP address like `http://51.20.1.29/`.
 
-### Adım 8️⃣: Özel Domain Kullanma
+### Step 8️⃣: Use a Custom Domain
 
-Daha profesyonel bir görünüm elde etmek için hosting.com.tr veya benzer bir domain sağlayıcısından bir domain satın alın. Ardından, bu domaini sanal makinenizin IP adresi ile yönlendirerek projenizi özel bir domain üzerinde çalıştırabilirsiniz.
+To achieve a more professional appearance, purchase a domain from hosting.com.tr or a similar domain provider. Then, you can run your project on a custom domain by pointing it to your virtual machine's IP address.
 
-### Adım 9️⃣: Özelleştirmeler
+### Step 9️⃣: Customizations
 
-Projeyi kişiselleştirmek için aşağıdaki adımları izleyin:
+Follow these steps to personalize the project:
 
-#### 1. Shopier API Anahtarları
+#### 1\. Shopier API Keys
 
-- `main.py` dosyasında bulunan `"Bearer API_KEY"` ifadesini, kendi Shopier API
+  - Replace `"Bearer API_KEY"` in the `main.py` file with your own **Shopier API key**.
 
- anahtarınızla değiştirin.
+#### 2\. SMTP Settings
 
-#### 2. SMTP Ayarları
+  - Replace `"YOUR_GMAIL"` and `"YOUR_PASSWORD_OF_GMAIL"` with your own **Gmail address and password**. This is used for email verification processes.
 
-- `"YOUR_GMAIL"` ve `"YOUR_PASSWORD_OF_GMAIL"` ifadelerini, kendi Gmail adresiniz ve şifrenizle değiştirin. Bu, e-posta doğrulama işlemleri için kullanılır.
+#### 3\. Product IDs
 
-#### 3. Ürün ID'leri
+  - In the `get_emails` function, replace `"YOUR_PRODUCT_ID"` with the **product IDs** you created in your Shopier account.
 
-- `get_emails` fonksiyonunda, `"YOUR_PRODUCT_ID"` ifadesini, Shopier hesabınızda oluşturduğunuz ürün ID'leri ile değiştirin.
+### Step 🔟: Go Live with the Project
 
-### Adım 🔟: Projeyi Canlıya Alma
+Your project is now live\! You can use it by visiting your project's URL in your browser. For example, [stayhard.com.tr](http://stayhard.com.tr).
 
-Projeniz artık canlı! Tarayıcınızda projenizin URL'sini ziyaret ederek kullanabilirsiniz. Örneğin, [stayhard.com.tr](http://stayhard.com.tr).
+## 🔍 Main Functions of the Code
 
-## 🔍 Kodların Ana İşlevleri
+The main functions of the Python code within the project are as follows:
 
-Proje içindeki Python kodlarının ana işlevleri şunlardır:
+### `main.py` Functions
 
-### `main.py` İşlevleri
+1.  **User Login and Session Management**
 
-1. **Kullanıcı Girişi ve Oturum Yönetimi**
+      - The `User` class is used to represent users.
+      - The `load_user` function is used to load users by their IDs.
+      - Session management is provided with `login_manager`.
 
-   - `User` sınıfı, kullanıcıları temsil etmek için kullanılır.
-   - `load_user` fonksiyonu, kullanıcıları ID'leriyle yüklemek için kullanılır.
-   - `login_manager` ile oturum yönetimi sağlanır.
+2.  **Fetching Email Addresses from API**
 
-2. **E-posta Adreslerini API'den Getirme**
+      - The `get_emails` function retrieves customer email addresses from the API and stores them in the `customer_emails` list.
 
-   - `get_emails` fonksiyonu, API'den müşteri e-posta adreslerini çeker ve `customer_emails` listesine depolar.
+3.  **Home Page (`/`)**
 
-3. **Ana Sayfa (`/`)**
+      - The `main` function represents the home page and returns the `main.html` template.
 
-   - `main` fonksiyonu, ana sayfayı temsil eder ve `main.html` şablonunu döndürür.
+4.  **Email Verification Process**
 
-4. **E-posta Doğrulama İşlemi**
+      - The `create_verification_code` function generates a random verification code.
+      - The `send_code_to_mail` function sends the verification code to the user via email.
 
-   - `create_verification_code` fonksiyonu, rastgele bir doğrulama kodu oluşturur.
-   - `send_code_to_mail` fonksiyonu, kullanıcıya e-posta ile doğrulama kodu gönderir.
+5.  **Book Viewing and Redirection**
 
-5. **Kitapları Görüntüleme ve Yönlendirme**
+      - The `login` function allows the user to log in to view books.
+      - The `check_verification` function checks the user's verification code and redirects them to the books.
 
-   - `login` fonksiyonu, kullanıcının kitapları görüntülemesi için giriş yapmasını sağlar.
-   - `check_verification` fonksiyonu, kullanıcının doğrulama kodunu kontrol eder ve kitapları yönlendirir.
+6.  **Book Pages**
 
-6. **Kitap Sayfaları**
+      - The `firstbook` and `secondbook` functions allow the user to view the books.
 
-   - `firstbook` ve `secondbook` fonksiyonları, kullanıcının kitapları görüntülemesini sağlar.
+### HTML Files Functions
 
-### HTML Dosyaları İşlevleri
+1.  **`main.html`**: Contains the main page design. It presents a card design for the user to view books.
 
-1. **`main.html`**: Ana sayfa tasarımını içerir. Kullanıcının kitapları görüntüleyebilmesi için bir kart tasarımı sunar.
+2.  **`login.html`**: Presents a form where the user can enter their email address.
 
-2. **`login.html`**: Kullanıcının e-posta adresini girebileceği bir form sunar.
+3.  **`verification.html`**: Presents a form to enter the verification code.
 
-3. **`verification.html`**: Doğrulama kodunu girmek için bir form sunar.
+4.  **`firstbook.html` and `secondbook.html`**: Contain the design of the book pages. They provide a view for users to read the books.
 
-4. **`firstbook.html` ve `secondbook.html`**: Kitap sayfalarının tasarımını içerir. Kullanıcıların kitapları okuyabilmesi için bir görünüm sunar.
+5.  **`error_page.html`**: Presents a page design showing errors and warnings.
 
-5. **`error_page.html`**: Hataları ve uyarıları gösteren bir sayfa tasarımı sunar.
+## 🧰 Technologies and Libraries
 
-## 🧰 Teknolojiler ve Kütüphaneler
+  - **Flask**: A Python framework used for developing web applications.
+  - **Flask-Login**: A Flask extension used for user session management.
+  - **requests**: A Python module used for making API calls.
+  - **smtplib and email**: Python modules used for email verification processes.
+  - **HTML and CSS**: Basic web technologies used to create the user interface.
 
-- **Flask**: Web uygulaması geliştirmek için kullanılan Python çerçevesi.
-- **Flask-Login**: Kullanıcı oturumu yönetimi için kullanılan Flask eklentisi.
-- **requests**: API çağrıları yapmak için kullanılan Python modülü.
-- **smtplib ve email**: E-posta doğrulama işlemleri için kullanılan Python modülleri.
-- **HTML ve CSS**: Kullanıcı arayüzünü oluşturmak için kullanılan temel web teknolojileri.
+## 📁 File Directory
 
-## 📁 Dosya Dizini
-
-Proje dosya dizini aşağıdaki şekildedir:
+The project file directory is as follows:
 
 ```
 - Bonus Project
@@ -159,25 +156,19 @@ Proje dosya dizini aşağıdaki şekildedir:
     README.md
 ```
 
-## 📂 Dosya Açıklamaları
+## 📂 File Descriptions
 
-- `main.py`: Flask uygulamasının ana dosyasıdır. Kullanıcı girişi, e-posta doğrulama, kitap görüntüleme ve yönlendirme işlemlerini içerir.
+  - `main.py`: The main file of the Flask application. It includes user login, email verification, book viewing, and redirection processes.
 
-- `static`: Stil dosyaları ve favicon gibi statik dosyaların bulunduğu klasördür.
+  - `static`: The folder containing static files such as style sheets and favicon.
 
-- `templates`: Flask uygulamanızın HTML şablonlarını içeren klasördür.
+  - `templates`: The folder containing the HTML templates for your Flask application.
 
-## 🧑‍💻 Python Kodlarının İşlevleri
+## 🧑‍💻 Python Code Functions
 
-Proje içindeki Python kodları aşağıdaki işlevlere sahiptir:
+The Python code within the project has the following functions:
 
-- Kullanıcı girişi ve oturum yönetimi.
-- E-posta doğrulama ve e-posta gönderme işlemleri.
-- API kullanarak kitapları görüntüleme.
-- Kullanıcının kitapları satın alma veya okuma işlemleri.
-
-## 🌐 HTML Dosyaları
-
-Projedeki HTML dosyaları, kullanıcı arayüzünün tasarlandığı ve Flask ile birleştirildiği dosyalardır. HTML dosyaları, kullanıcıların kitapları görüntülemesini ve işlemlerini gerçekleştirmesini sağlar.
-
----
+  - User login and session management.
+  - Email verification and email sending processes.
+  - Viewing books using API.
+  - User's book purchase or reading processes.
